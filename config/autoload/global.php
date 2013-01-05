@@ -12,5 +12,18 @@
  */
 
 return array(
-    // ...
+		'navigation' => array(
+				'default' => array(
+						array(
+								'label' => 'Home',
+								'route' => 'home',
+						),
+						array(
+								'label' => 'Stock',
+								'route' => 'stock',
+						),
+				)
+		),
+
+		// ...
 );
