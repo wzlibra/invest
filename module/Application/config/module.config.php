@@ -20,10 +20,12 @@ return array(
                     ),
                 ),
             ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
+            /*
+             The following is a route to simplify getting started creating
+             new controllers and actions without needing to create a new
+             module. Simply drop new controllers in, and you can access them
+             using the path /application/:controller/:action
+             */ 
             'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -55,10 +57,11 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            'default' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'zh_CN',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
@@ -85,7 +88,7 @@ return array(
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
         'template_path_stack' => array(
-            __DIR__ . '/../view',
+            'application' => __DIR__ . '/../view',
         ),
     ),
 );
